@@ -3,190 +3,406 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Event sheet 1</name>
     <events>
-        <variable constant="0" name="Game" sid="394732659133804" static="0" type="number">0</variable>
-        <event-block sid="652649103966963">
+        <variable constant="0" name="bug" sid="626511707735291" static="0" type="number">1</variable>
+        <variable constant="0" name="jogo" sid="394732659133804" static="0" type="number">1</variable>
+        <variable constant="0" name="sono" sid="363628476261713" static="0" type="number">0.25</variable>
+        <variable constant="0" name="fome" sid="451529462430102" static="0" type="number">0.5</variable>
+        <variable constant="0" name="xixi" sid="933300342698646" static="0" type="number">1</variable>
+        <variable constant="0" name="limpar" sid="159549475876275" static="0" type="number">5</variable>
+        <event-block sid="360332020382640">
             <conditions>
-                <condition id="1" name="Is overlapping another object" sid="523183874169455" type="Player">
-                    <param id="0" name="Object">Sprite5</param>
+                <condition id="3" name="On touched object" sid="630278771228367" type="Touch">
+                    <param id="0" name="Object">PC2</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="-5" name="Set width" sid="434647405880409" type="Sprite4">
+                <action id="8" name="Open URL in new window" sid="748738836044491" type="Browser">
+                    <param id="0" name="URL">&quot;https://oataquedascorujas.github.io/mosquitosapomacaco/&quot;</param>
+                    <param id="1" name="Tag">&quot;NewWindow&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="840462911163125">
+            <conditions>
+                <condition id="-5" name="Compare width" sid="632574745454471" type="Jogo">
+                    <param id="0" name="Comparison">4</param>
+                    <param id="1" name="Width">140</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="522490697840877" type="System">
+                    <param id="0" name="Layout">Fim</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="327501096870501">
+            <conditions>
+                <condition behavior="Fade" id="0" name="On fade-out finished" sid="611124932668444" type="Tilemap2" />
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="823690608010406" type="System">
+                    <param id="0" name="Layout">Jogo</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="804153098415797">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="404451170401096" type="System" />
+            </conditions>
+            <actions>
+                <action id="-5" name="Set width" sid="370259944388128" type="Xixi">
+                    <param id="0" name="Width">0</param>
+                </action>
+                <action id="-5" name="Set width" sid="784503752825571" type="Sono">
+                    <param id="0" name="Width">0</param>
+                </action>
+                <action id="-5" name="Set width" sid="474550007528116" type="Fome">
+                    <param id="0" name="Width">0</param>
+                </action>
+                <action id="-5" name="Set width" sid="198071312335633" type="Jogo">
+                    <param id="0" name="Width">0</param>
+                </action>
+                <action id="-5" name="Set width" sid="277728702333088" type="Bug">
                     <param id="0" name="Width">0</param>
                 </action>
             </actions>
         </event-block>
-        <event-block sid="184959985835936">
-            <conditions>
-                <condition id="1" name="Is overlapping another object" sid="410601956302857" type="Player">
-                    <param id="0" name="Object">Sprite8</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-5" name="Set width" sid="387633712089884" type="Sprite9">
-                    <param id="0" name="Width">0</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="539163178401461">
-            <conditions>
-                <condition id="1" name="Is overlapping another object" sid="858825487994105" type="Player">
-                    <param id="0" name="Object">Sprite6</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-5" name="Set width" sid="225179589559613" type="Sprite7">
-                    <param id="0" name="Width">0</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="524128048995058">
-            <conditions>
-                <condition id="-6" name="Every X seconds" sid="888605597706284" type="System">
-                    <param id="0" name="Interval (seconds)">1.0</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-5" name="Set width" sid="870615596598295" type="Sprite4">
-                    <param id="0" name="Width">Self.Width+1</param>
-                </action>
-                <action id="-5" name="Set width" sid="740795427188994" type="Sprite7">
-                    <param id="0" name="Width">Self.Width+1.5</param>
-                </action>
-                <action id="-5" name="Set width" sid="357805900384194" type="Sprite9">
-                    <param id="0" name="Width">Self.Width+0.5</param>
-                </action>
-            </actions>
+        <event-group description="" sid="112590466436650" title="Necessidades">
             <sub-events>
-                <event-block sid="545950363955136">
+                <event-block sid="524128048995058">
                     <conditions>
-                        <condition id="1" name="Is overlapping another object" sid="472117959238706" type="Player">
-                            <param id="0" name="Object">Sprite2</param>
+                        <condition id="-6" name="Every X seconds" sid="888605597706284" type="System">
+                            <param id="0" name="Interval (seconds)">1.0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="309927004170530">
+                            <conditions>
+                                <condition id="-5" name="Compare width" sid="263292379344868" type="Xixi">
+                                    <param id="0" name="Comparison">3</param>
+                                    <param id="1" name="Width">50</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-5" name="Set width" sid="562226876966109" type="Xixi">
+                                    <param id="0" name="Width">Self.Width+xixi</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="478843636896733">
+                            <conditions>
+                                <condition id="-5" name="Compare width" sid="904436562593147" type="Fome">
+                                    <param id="0" name="Comparison">3</param>
+                                    <param id="1" name="Width">50</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-5" name="Set width" sid="740795427188994" type="Fome">
+                                    <param id="0" name="Width">Self.Width+fome</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="165944853598746">
+                            <conditions>
+                                <condition id="-5" name="Compare width" sid="805942607870561" type="Sono">
+                                    <param id="0" name="Comparison">3</param>
+                                    <param id="1" name="Width">50</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-5" name="Set width" sid="357805900384194" type="Sono">
+                                    <param id="0" name="Width">Self.Width+sono</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="545950363955136">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="472117959238706" type="Player">
+                                    <param id="0" name="Object">Computador</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="762188120809882" type="PC">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block any="1" sid="107946059626875">
+                                    <conditions>
+                                        <condition id="-5" name="Compare width" sid="807013575538623" type="Bug">
+                                            <param id="0" name="Comparison">4</param>
+                                            <param id="1" name="Width">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-5" name="Set width" sid="271915030112546" type="Bug">
+                                            <param id="0" name="Width">Self.Width-bug</param>
+                                        </action>
+                                        <action id="0" name="Spawn another object" sid="348144859187508" type="Player">
+                                            <param id="0" name="Object">Pbug</param>
+                                            <param id="1" name="Layer">1</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="524843862834698">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="989633179007429" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-5" name="Set width" sid="412632341251832" type="Jogo">
+                                            <param id="0" name="Width">Self.Width+jogo</param>
+                                        </action>
+                                        <action id="0" name="Spawn another object" sid="582904553887037" type="Player">
+                                            <param id="0" name="Object">Pjogo</param>
+                                            <param id="1" name="Layer">1</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="647049812070549">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="358008764297644" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="828238233011157" type="PC">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="341788405315719">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="607761859114742" type="Player">
+                                    <param id="0" name="Object">Banheiro</param>
+                                </condition>
+                                <condition id="-5" name="Compare width" sid="443661382905140" type="Xixi">
+                                    <param id="0" name="Comparison">4</param>
+                                    <param id="1" name="Width">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-5" name="Set width" sid="814249213582186" type="Xixi">
+                                    <param id="0" name="Width">Self.Width-limpar</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="646828190868319" type="Player">
+                                    <param id="0" name="Object">Pxixi</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="184959985835936">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="410601956302857" type="Player">
+                                    <param id="0" name="Object">Cama</param>
+                                </condition>
+                                <condition id="-5" name="Compare width" sid="296254306530545" type="Sono">
+                                    <param id="0" name="Comparison">4</param>
+                                    <param id="1" name="Width">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-5" name="Set width" sid="387633712089884" type="Sono">
+                                    <param id="0" name="Width">Self.Width-limpar</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="248971794283865" type="Player">
+                                    <param id="0" name="Object">Psono</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="539163178401461">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="858825487994105" type="Player">
+                                    <param id="0" name="Object">Geladeira</param>
+                                </condition>
+                                <condition id="-5" name="Compare width" sid="676558077394976" type="Fome">
+                                    <param id="0" name="Comparison">4</param>
+                                    <param id="1" name="Width">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-5" name="Set width" sid="225179589559613" type="Fome">
+                                    <param id="0" name="Width">Self.Width-limpar</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="176153638028371" type="Player">
+                                    <param id="0" name="Object">Pfome</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block any="1" sid="154424366199154">
+                            <conditions>
+                                <condition id="-5" name="Compare width" sid="358697369497390" type="Xixi">
+                                    <param id="0" name="Comparison">5</param>
+                                    <param id="1" name="Width">50</param>
+                                </condition>
+                                <condition id="-5" name="Compare width" sid="668432696581339" type="Fome">
+                                    <param id="0" name="Comparison">5</param>
+                                    <param id="1" name="Width">50</param>
+                                </condition>
+                                <condition id="-5" name="Compare width" sid="567073098384043" type="Sono">
+                                    <param id="0" name="Comparison">5</param>
+                                    <param id="1" name="Width">50</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="860237580194858">
+                                    <conditions>
+                                        <condition id="-5" name="Compare width" sid="603890759141808" type="Bug">
+                                            <param id="0" name="Comparison">3</param>
+                                            <param id="1" name="Width">86</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-5" name="Set width" sid="608489372186739" type="Bug">
+                                            <param id="0" name="Width">Self.Width+bug</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="895113428547764" title="Controle">
+            <sub-events>
+                <event-block sid="633863157703044">
+                    <conditions>
+                        <condition id="3" name="On key released" sid="831509723070132" type="Keyboard">
+                            <param id="0" name="Key">39</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-5" name="Set width" sid="412632341251832" type="Sprite3">
-                            <param id="0" name="Width">Self.Width+2</param>
+                        <action id="4" name="Set animation" sid="701095589810962" type="Player">
+                            <param id="0" name="Animation">&quot;DefaultRight&quot;</param>
+                            <param id="1" name="From">0</param>
+                        </action>
+                        <action id="7" name="Set mirrored" sid="148104486959178" type="Player">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="127010209061813">
+                    <conditions>
+                        <condition id="3" name="On key released" sid="426879771404337" type="Keyboard">
+                            <param id="0" name="Key">37</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="473739236722435" type="Player">
+                            <param id="0" name="Animation">&quot;DefaultRight&quot;</param>
+                            <param id="1" name="From">0</param>
+                        </action>
+                        <action id="7" name="Set mirrored" sid="637754844791142" type="Player">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="481983951509389">
+                    <conditions>
+                        <condition id="3" name="On key released" sid="182295600545982" type="Keyboard">
+                            <param id="0" name="Key">40</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="807551542446865" type="Player">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                            <param id="1" name="From">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="964639141967921">
+                    <conditions>
+                        <condition id="3" name="On key released" sid="572840960793132" type="Keyboard">
+                            <param id="0" name="Key">38</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="470946370269159" type="Player">
+                            <param id="0" name="Animation">&quot;DefaultUp&quot;</param>
+                            <param id="1" name="From">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="325284282607773">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="354993941093629" type="Keyboard">
+                            <param id="0" name="Key">38</param>
+                        </condition>
+                        <condition id="2" name="Key is down" sid="585623119554897" type="Keyboard">
+                            <param id="0" name="Key">38</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="833115516249595" type="Player">
+                            <param id="0" name="Animation">&quot;Up&quot;</param>
+                            <param id="1" name="From">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="319750994387386">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="286444740654945" type="Keyboard">
+                            <param id="0" name="Key">40</param>
+                        </condition>
+                        <condition id="2" name="Key is down" sid="343825836764569" type="Keyboard">
+                            <param id="0" name="Key">40</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="300511224366692" type="Player">
+                            <param id="0" name="Animation">&quot;Down&quot;</param>
+                            <param id="1" name="From">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="110704940969525">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="627921416976916" type="Keyboard">
+                            <param id="0" name="Key">37</param>
+                        </condition>
+                        <condition id="2" name="Key is down" sid="620801496111012" type="Keyboard">
+                            <param id="0" name="Key">37</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="513588637473479" type="Player">
+                            <param id="0" name="Animation">&quot;Right&quot;</param>
+                            <param id="1" name="From">0</param>
+                        </action>
+                        <action id="7" name="Set mirrored" sid="682746304311735" type="Player">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="264261449524929">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="870016729705278" type="Keyboard">
+                            <param id="0" name="Key">39</param>
+                        </condition>
+                        <condition id="2" name="Key is down" sid="668663936877667" type="Keyboard">
+                            <param id="0" name="Key">39</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="326396025236642" type="Player">
+                            <param id="0" name="Animation">&quot;Right&quot;</param>
+                            <param id="1" name="From">0</param>
+                        </action>
+                        <action id="7" name="Set mirrored" sid="415990352153772" type="Player">
+                            <param id="0" name="State">1</param>
                         </action>
                     </actions>
                 </event-block>
             </sub-events>
-        </event-block>
-        <event-block sid="325284282607773">
-            <conditions>
-                <condition id="0" name="On key pressed" sid="354993941093629" type="Keyboard">
-                    <param id="0" name="Key">38</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="4" name="Set animation" sid="833115516249595" type="Player">
-                    <param id="0" name="Animation">&quot;Up&quot;</param>
-                    <param id="1" name="From">0</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="319750994387386">
-            <conditions>
-                <condition id="0" name="On key pressed" sid="286444740654945" type="Keyboard">
-                    <param id="0" name="Key">40</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="4" name="Set animation" sid="300511224366692" type="Player">
-                    <param id="0" name="Animation">&quot;Down&quot;</param>
-                    <param id="1" name="From">0</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="110704940969525">
-            <conditions>
-                <condition id="0" name="On key pressed" sid="627921416976916" type="Keyboard">
-                    <param id="0" name="Key">37</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="4" name="Set animation" sid="513588637473479" type="Player">
-                    <param id="0" name="Animation">&quot;Right&quot;</param>
-                    <param id="1" name="From">0</param>
-                </action>
-                <action id="7" name="Set mirrored" sid="682746304311735" type="Player">
-                    <param id="0" name="State">0</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="264261449524929">
-            <conditions>
-                <condition id="0" name="On key pressed" sid="870016729705278" type="Keyboard">
-                    <param id="0" name="Key">39</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="4" name="Set animation" sid="326396025236642" type="Player">
-                    <param id="0" name="Animation">&quot;Right&quot;</param>
-                    <param id="1" name="From">0</param>
-                </action>
-                <action id="7" name="Set mirrored" sid="415990352153772" type="Player">
-                    <param id="0" name="State">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="633863157703044">
-            <conditions>
-                <condition id="3" name="On key released" sid="831509723070132" type="Keyboard">
-                    <param id="0" name="Key">39</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="4" name="Set animation" sid="701095589810962" type="Player">
-                    <param id="0" name="Animation">&quot;DefaultRight&quot;</param>
-                    <param id="1" name="From">0</param>
-                </action>
-                <action id="7" name="Set mirrored" sid="148104486959178" type="Player">
-                    <param id="0" name="State">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="127010209061813">
-            <conditions>
-                <condition id="3" name="On key released" sid="426879771404337" type="Keyboard">
-                    <param id="0" name="Key">37</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="4" name="Set animation" sid="473739236722435" type="Player">
-                    <param id="0" name="Animation">&quot;DefaultRight&quot;</param>
-                    <param id="1" name="From">0</param>
-                </action>
-                <action id="7" name="Set mirrored" sid="637754844791142" type="Player">
-                    <param id="0" name="State">0</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="481983951509389">
-            <conditions>
-                <condition id="3" name="On key released" sid="182295600545982" type="Keyboard">
-                    <param id="0" name="Key">40</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="4" name="Set animation" sid="807551542446865" type="Player">
-                    <param id="0" name="Animation">&quot;Default&quot;</param>
-                    <param id="1" name="From">0</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="964639141967921">
-            <conditions>
-                <condition id="3" name="On key released" sid="572840960793132" type="Keyboard">
-                    <param id="0" name="Key">38</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="4" name="Set animation" sid="470946370269159" type="Player">
-                    <param id="0" name="Animation">&quot;DefaultUp&quot;</param>
-                    <param id="1" name="From">0</param>
-                </action>
-            </actions>
-        </event-block>
+        </event-group>
     </events>
 </c2eventsheet>
